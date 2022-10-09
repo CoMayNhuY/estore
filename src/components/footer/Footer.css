@@ -1,0 +1,66 @@
+.footer {
+    height: 200px;
+    background-color: white;
+    margin-top: 30px;
+    position: relative;
+    margin-left: 35px;
+}
+/* .footer-h-l {
+    position: absolute;
+    margin-left: 40px;
+    height: 100%;
+} */
+.aroundInfo {
+    display: flex;
+    flex-direction: column;
+}
+.info-mr {
+    margin-bottom: 10px;
+}
+.text-icon-footer {
+    margin-left: 10px;
+    color: rgb(129, 127, 127);
+}
+#iconFL-1 {
+    color: rgb(59, 59, 59);
+}
+
+.aroundButton {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+
+.btn-around {
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    border-radius: 3px;
+    /* border: 1px solid #ff5252; */
+    border: 1px solid rgb(123, 121, 121);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.accept {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.surroundImg {
+    margin-right: 15px;
+    width: 75px;
+    height: 45px;
+    border-radius: 3px;
+    border: 1px solid rgb(220, 171, 86);
+    position: relative;
+}
+.styImg {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    position: absolute;
+}

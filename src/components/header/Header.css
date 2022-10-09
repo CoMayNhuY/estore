@@ -1,0 +1,91 @@
+/*----------------Header Top--------------*/
+.hi {
+    background-color: #ff5252;
+}
+.link {
+    text-decoration: none;
+}
+.btn-dangerous {
+    height: 50px;
+    margin-left: 30px;
+}
+.nav-link,
+.btn-hd-t-left {
+    color: white;
+}
+
+.nav-link:hover,
+.btn-hd-t-left:hover {
+    color: black;
+}
+
+.menu-header-top-right {
+    display: flex;
+    justify-content: flex-end;
+}
+.main-hd-t-l {
+    color: #212121;
+}
+#nav-text,
+.btn-hd-t-left {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+}
+.btn-hd-t-left {
+    margin-top: 3px;
+}
+
+/*----------------end Header Top--------------*/
+.Header-Main {
+    background-color: white;
+}
+.header-main-logo {
+    width: 60%;
+    height: 100%;
+    object-fit: cover;
+    margin-left: 20px;
+}
+.header-main-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-control {
+    border-radius: 3px;
+    border: 1px solid #ff5252;
+    border-right: 1px solid transparent;
+}
+.input-group-text {
+    border-radius: 3px;
+    border: 1px solid #ff5252;
+    border-left: 1px solid transparent;
+}
+.fa-magnifying-glass {
+    color: #ff5252;
+}
+.input-group {
+    width: 500px;
+}
+.heart-cart {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+    margin-left: 110px;
+    margin-right: -250px;
+}
+.btn {
+    border: 1px solid #ff5252;
+    border-radius: 3px;
+}
+.fa-heart,
+.fa-cart-shopping {
+    color: #ff5252;
+}
+/* .btn-heart {
+    margin-right: -140px;
+} */
+
+.styH-C {
+    color: #ff5252;
+}

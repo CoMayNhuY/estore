@@ -1,0 +1,28 @@
+{
+    "contentProduct": [
+        {
+            "id": 1,
+            "title": "Featured Product",
+            "subIconBtn": "[<ArrowBackIosIcon />, <ArrowForwardIosIcon />]",
+            "Products": [
+                {
+                    "name": "Product Name",
+                    "Img": "https://i.ndh.vn/2014/09/21/ba972046-1411260123.jpg",
+                    "Price": 99
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "title": "me cuoc doi",
+            "subIconBtn": "[<ArrowBackIosIcon />, <ArrowForwardIosIcon />]",
+            "Products": [
+                {
+                    "name": "Product Name",
+                    "Img": "https://i.ndh.vn/2014/09/21/ba972046-1411260123.jpg",
+                    "Price": 99
+                }
+            ]
+        }
+    ]
+}

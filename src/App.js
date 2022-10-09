@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Routers from './routes/routes';
 
+export const contextTest = React.createContext();
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [carts, setCarts] = React.useState([]);
+    const [totalPrice, setTotalPrice] = React.useState(0);
+
+    return (
+        <contextTest.Provider value={{ state1: [carts, setCarts], state2: [totalPrice, setTotalPrice] }}>
+            <Routers />;
+        </contextTest.Provider>
+    );
 }
 
 export default App;
