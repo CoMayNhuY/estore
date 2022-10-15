@@ -5,12 +5,11 @@ import '../cart/Cart.css';
 
 import CartItem from './CartItem';
 import CartSum from './CartSum';
-import { contextTest } from '../../App';
+import { useSelector } from 'react-redux';
+// import { contextTest } from '../../App';
 
 function Cart() {
-    const { state1 } = React.useContext(contextTest);
-    const [carts, setCarts] = state1;
-
+    const carts = useSelector((m) => m.cart.carts);
     return (
         <div>
             <Header />

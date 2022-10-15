@@ -1,17 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useEffect } from 'react';
-import { contextTest } from '../../App';
+// import { contextTest } from '../../App';
 import '../cart/Cart.css';
+import { useSelector, useDispatch } from 'react-redux';
 
 const CartSum = () => {
-    const { state1, state2 } = React.useContext(contextTest);
-    const [carts, setCarts] = state1;
-    const [totalPrice, setTotalPrice] = state2;
+    const carts = useSelector((state) => state.cart.carts);
+    const totalPrice = carts.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
-    useEffect(() => {
-        const totalPrice = carts.reduce((acc, item) => acc + item.price * item.quantity, 0);
-        setTotalPrice(totalPrice);
-    }, [carts]);
+    // const { state1, state2 } = React.useContext(contextTest);
+    // const [carts, setCarts] = state1;
+    // const [totalPrice, setTotalPrice] = state2;
+
+    // useEffect(() => {
+    //     const totalPrice = carts.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    //     setTotalPrice(totalPrice);
+    // }, [carts]);
+
     return (
         <div className="container content-sum">
             <div className="code">

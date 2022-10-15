@@ -2,6 +2,8 @@ import React from 'react';
 import './product.css';
 import { makeStyles } from '@mui/styles';
 import StarIcon from '@mui/icons-material/Star';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/CartSlice';
 const useStyles = makeStyles({
     styIcB: {
         color: '#ff5252',
@@ -40,7 +42,11 @@ var stars = [];
 for (var i = 0; i < 5; i++) {
     stars.push(<StarIcon style={{ fontSize: 16 }} />);
 }
-function ProductItem({ item, addItemToCart }) {
+function ProductItem({ item /*, ProductItem*/ }) {
+    const carts = useSelector((state) => {
+        return state.cart.carts;
+    });
+    const dispatch = useDispatch();
     const classes = useStyles();
     return (
         <div>
@@ -95,7 +101,7 @@ function ProductItem({ item, addItemToCart }) {
                                                 >
                                                     <i
                                                         class="fa-solid fa-cart-shopping shopping-ho"
-                                                        onClick={() => addItemToCart(itemProd)}
+                                                        onClick={() => dispatch(addToCart(itemProd))}
                                                     ></i>
                                                 </button>
                                             </div>

@@ -3,11 +3,17 @@ import '../header/Header.css';
 import NavBarItem from './navbarItem';
 import { constmenuHeaderTopLeft, constmenuHeaderTopRight, menuBanner } from './menuHeader';
 import { Link } from 'react-router-dom';
-import { contextTest } from '../../App';
+// import { contextTest } from '../../App';
+
+import { useSelector, useDispatch } from 'react-redux';
 
 function Header() {
-    const { state1 } = React.useContext(contextTest);
-    const [carts, setCarts] = state1;
+    // const { state1 } = React.useContext(contextTest);
+    // const [carts, setCarts] = state1;
+
+    const carts = useSelector((state) => state.cart.carts);
+    console.log(carts);
+
     return (
         <div>
             <div className="container-fluid hi">
@@ -63,6 +69,7 @@ function Header() {
                         <button className="btn btn-dangerous">
                             <Link to="/cart" style={{ textDecoration: 'none' }}>
                                 <i className="fa-solid fa-cart-shopping"></i>
+                                {/* <span className="styH-C"> ({carts.length})</span> */}
                                 <span className="styH-C"> ({carts.length})</span>
                             </Link>
                         </button>

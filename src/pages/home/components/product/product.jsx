@@ -3,9 +3,12 @@ import '../../../../components/product/product.css';
 import { makeStyles } from '@mui/styles';
 import { contentProduct, contentB_F } from '../../../../dummyData/constantBody';
 import StarIcon from '@mui/icons-material/Star';
-import { contextTest } from '../../../../App';
+// import { contextTest } from '../../../../App';
 import ProductItem from '../../../../components/product';
 import FeedbackPost from '../../../../components/Feedbackpost';
+
+import { useSelector, useDispatch } from 'react-redux';
+import { addItemToCart, cartReducer } from '../../../../redux/CartSlice';
 
 const useStyles = makeStyles({
     styIcB: {
@@ -47,37 +50,43 @@ for (var i = 0; i < 5; i++) {
 }
 
 function Body() {
-    const classes = useStyles();
-    const { state1 } = useContext(contextTest);
-    const [carts, setCarts] = state1;
+    const carts = useSelector((state) => {
+        return state.carts;
+    });
+    const dispatch = useDispatch();
 
-    const addItemToCart = (item) => {
-        const existProduct = carts.find((m) => m.id === item.id);
-        if (existProduct) {
-            setCarts(
-                carts.map((product) =>
-                    product.id === item.id
-                        ? {
-                              ...existProduct,
-                              quantity: existProduct.quantity + 1,
-                          }
-                        : product,
-                ),
-            );
-        } else {
-            setCarts((prev) => [
-                ...prev,
-                {
-                    id: item.id,
-                    name: item.name,
-                    price: item.Price,
-                    img: item.Img,
-                    quantity: 1,
-                },
-            ]);
-        }
-        alert('product has been add in cart !!');
-    };
+    // const classes = useStyles();
+    // const { state1 } = useContext(contextTest);
+    // const [carts, setCarts] = state1;
+
+    // const addItemToCart = (item) => {
+    //     const existProduct = carts.find((m) => m.id === item.id);
+    //     if (existProduct) {
+    //         setCarts(
+    //             carts.map((product) =>
+    //                 product.id === item.id
+    //                     ? {
+    //                           ...existProduct,
+    //                           quantity: existProduct.quantity + 1,
+    //                       }
+    //                     : product,
+    //             ),
+    //         );
+    //     } else {
+    //         setCarts((prev) => [
+    //             ...prev,
+    //             {
+    //                 id: item.id,
+    //                 name: item.name,
+    //                 price: item.Price,
+    //                 img: item.Img,
+    //                 quantity: 1,
+    //             },
+    //         ]);
+    //     }
+    //     alert('product has been add in cart !!');
+    // };
+
     // const [blogItems, setBlogItems] = React.useState();
     // React.useEffect(() => {
     //     const fecthAPI = async () => {
@@ -91,7 +100,8 @@ function Body() {
     return (
         <div>
             {contentProduct.map((item, index) => (
-                <ProductItem key={item.id} item={item} addItemToCart={addItemToCart} />
+                // <ProductItem key={item.id} item={item} addItemToCart={addItemToCart} />
+                <ProductItem key={item.id} item={item} />
             ))}
             <div className="container-fluid sp">
                 <div className="row">
